@@ -2,11 +2,30 @@
 <html lang="en">
     <head>
     <meta charset="UTF-8"> 
-    <h1>Avengers Character Search</h1>
-    <script src="app.js" defer></script>   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Avengers Character Search</title>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="styles.css"/>   
     </head>
-    <body>
-    <button id="btn">Search</button>
-    <div id="results"></div>
+    <body class="grid-container">
+        <header class="Top-of-page">
+            <h1>Avengers Character Search</h1>
+        </header>
+
+       <main class="main-content">
+        <section class="search-section">
+            <label for="name">Search by Full Name or Alias</label>
+            <div class="search-controls"> 
+                <input id="name" type="text" placeholder="e.g. Tony Stark or Ironman"/>
+                <button id="btn">Search</button>
+            </div>
+        </section>
+
+        <section class="result-section">
+            <h2>RESULT</h2>
+            <hr/>
+            <div id="result"></div>
+        </section>
+        </main>
     </body>
 </html>

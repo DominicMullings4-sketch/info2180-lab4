@@ -1,0 +1,68 @@
+body{
+    background-color: rgb(247, 244, 244);
+}
+
+header{
+    background-color: rgb(0, 140, 255);
+}
+
+h1{
+    color: white;
+}
+
+.Top-of-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.search-controls{
+    display: flex;
+    align-items: stretch;
+    gap: 0.75rem;
+}
+
+.main-content{
+    width: min(56rem, calc(100% - 2rem));
+    margin: 0 auto;
+}
+
+.search-section label{
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.search-controls{
+    display: flex;
+    gap: 0.75rem;
+}
+.search-controls input{
+    flex: 1;
+    padding: 1rem;
+}
+
+.search-controls button{
+    flex-shrink: 0;
+    background-color: red;
+    color: white;
+}
+
+.result-section{
+    margin-top: 2rem;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    gap: 1.5rem;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+   

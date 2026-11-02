@@ -1,29 +1,26 @@
 document.addEventListener("DOMContentLoaded", function(){
 
     const btn = document.getElementById("btn");
+    const name = document.getElementById("name");
+    const result = document.getElementById("result");
 
     btn.addEventListener("click", function(){
-    const httpRequest = new XMLHttpRequest();
+        const httpRequest = new XMLHttpRequest();
+        const query = name.value.trim();
 
         httpRequest.addEventListener("load", function(){
             if (httpRequest.status == 200){
-                const response = new DOMParser().parseFromString(httpRequest.responseText,"text/html");
+                result.innerHTML = httpRequest.responseText;
+            } else {
+                result.textContent = "The request failed.";
+            }
+        });
 
-        const supes = Array.from(response.querySelectorAll("li"))
-            .map(function (item){
-                return item.textContent.trim();
-            });
-
-            alert(supes.length ? supes.join("\n") : "No superheroes found.");
-        } else {
-            alert("The request has failed: " + httpRequest.status);
-        }
-    });
         httpRequest.addEventListener("error", function (){
-            alert('Unable to show the list of superheroes.');
+           result.textContent = "Unable to load superheroes.";
         });
             
-        httpRequest.open("Get", "superheroes.php"); 
+        httpRequest.open("Get", "superheroes.php?query=" + encodeURIComponent(query)); 
         httpRequest.send();
     });
 });
